@@ -10,8 +10,9 @@ namespace EmployeeWage
         public const int NUM_OF_WORKING_DAYS = 2;
         public const int MAX_HRS_IN_MONTH = 10;
 
-        public static int computeEmpWage()
+        public static int computeEmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
+            
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
             while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
@@ -33,13 +34,14 @@ namespace EmployeeWage
                 Console.WriteLine("Day : " + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
             int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Total Emp Wage : " + totalEmpWage);
+            Console.WriteLine("Total Employee Wage : " + totalEmpWage);
             return totalEmpWage;
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcom to Employee Wage");
-            computeEmpWage();
+            computeEmpWage("DMart", 20, 4, 10);
+            computeEmpWage("Relience", 10, 4, 20);
         }
 
     }
