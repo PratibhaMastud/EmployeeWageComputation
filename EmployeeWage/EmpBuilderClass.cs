@@ -4,8 +4,8 @@ using System.Text;
 
 namespace EmployeeWage
 {
-        public class EmpBuilderClass : IComputeEmpWage
-        {
+    public class EmpBuilderClass : IComputeEmpWage
+    {
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
@@ -63,9 +63,12 @@ namespace EmployeeWage
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day : " + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
+            companyEmpWage.dailyWage = empHrs * companyEmpWage.empRatePerHour;
+            companyEmpWage.TotalWageAlongWithDailyWage = totalEmpHrs * companyEmpWage.empRatePerHour + companyEmpWage.dailyWage;
             return totalEmpHrs * companyEmpWage.empRatePerHour;
 
         }
+
 
 
         public int getTotalWage(string company)
@@ -73,12 +76,8 @@ namespace EmployeeWage
             return this.companyToEmpWageMap[company].totalEmpWage;
         }
     }
-
 }
-    
 
 
-
-    
 
 
