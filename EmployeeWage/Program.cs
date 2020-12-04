@@ -4,20 +4,17 @@ namespace EmployeeWage
 {
     class Program
     {
-		static void Main(string[] args)
-		{
-			Console.WriteLine("Welcome Employee Wage Computation");
-			checkEmployeeAttendence();
-		}
-
-		public static void checkEmployeeAttendence()
-		{
-			Random rd = new Random();
-			int rand_num = rd.Next(0, 1);
-			if (rand_num == 1)
-				Console.WriteLine("Employee is Present");
-			else
-				Console.WriteLine("Employee is Not Present");
-		}
-	}
+        static void Main(string[] args)
+        {
+            partTimeEmployeeWage();
+        }
+        public static int partTimeEmployeeWage()
+        {
+            int wagePerHour = 20;
+            int dayHour = 4;
+            int dailyEmployeeWage = wagePerHour * dayHour;
+            Console.WriteLine("Part time Employee Wage is : {0}", dailyEmployeeWage);
+            return dailyEmployeeWage;
+        }
+    }
 }
